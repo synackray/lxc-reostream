@@ -60,7 +60,16 @@ Run this inside the container console:
 update
 ```
 
-Alternatively, re-run the install command from the Proxmox host and choose the update option. The script checks the latest GitHub release and only updates when a newer one exists. It stops the service, replaces the binary and restarts it. Your config and data are kept.
+You can also re-run the install command from the Proxmox host and choose the update option. The script checks the latest GitHub release and only updates when a newer one exists. It stops the service, replaces the binary and restarts it. Your config and data are kept.
+
+## Testing a branch
+
+`COMMUNITY_SCRIPTS_URL` overrides the default base, so a branch can be installed like this:
+
+```bash
+export COMMUNITY_SCRIPTS_URL=https://raw.githubusercontent.com/synackray/lxc-reostream/<branch>
+bash -c "$(curl -fsSL "$COMMUNITY_SCRIPTS_URL/ct/reostream.sh")"
+```
 
 ## Paths
 
